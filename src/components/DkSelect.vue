@@ -8,7 +8,7 @@
         @click="toggle"
         class="link_selected"
         href="javascript:;">
-        <span>열기</span>
+        <span>{{value}}</span>
         {{ hasPlaceholder }}
       </a>
       <input :id="id" :value="value" type="hidden" />
@@ -44,8 +44,10 @@ const SELECT_SIZE = {
 };
 export default {
   name: 'DkSelect',
-  data() {
+  data: function() {
     return {
+      newObject: {},
+      newLabel: '',
       isOpen: false
     }
   },
@@ -165,6 +167,38 @@ export default {
     //   type: Boolean,
     //   default: false
     // }
+  },
+  computed: {
+    hasPlaceholder () {
+      if (this.newLabel !== '') return this.newLabel;
+      return this.placeholder
+    }
+  },
+  watch: {
+     value: {
+      immediate: true,
+      handler (value) {
+        this.newValue = value;
+        if (!this.isObjectValue) {
+          const filter = this.options.filter((item) => {
+            return item[this.valueKey] === value;
+          })[0];
+          if (filter) {
+            this.newLabel = filter[this.labelKey];
+            this.newObject = filter;
+          }
+        } else {
+          const filter = this.options.filter((item) => {
+            return item[this.valueKey] === value[this.valueKey];
+          })[0];
+          if (filter) {
+            this.newLabel = filter[this.labelKey];
+            this.newObject = filter;
+          }
+        }
+        this.$emit('onChange', value);
+      }
+    },
   },
   methods: {
     toggle () {

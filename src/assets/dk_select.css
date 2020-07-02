@@ -1,0 +1,40 @@
+
+/* input - search, select 공통 */
+.opt_comm{position:relative;width:100%}
+.opt_comm .tf_comm{padding-right:32px}
+.opt_comm .box_tf .btn_g{position:absolute;top:0;right:0;padding:9px 8px;line-height:0;opacity:0.6}
+.opt_comm .box_tf .btn_g:disabled{opacity:0.2;cursor:not-allowed}
+.opt_comm .box_tf:hover .btn_g{opacity:1}
+.opt_comm .box_tf:hover .btn_g:disabled{opacity:0.2}
+.opt_comm .box_tf .btn_g + .btn_g{padding-left:4px}
+.opt_comm .box_tf .btn_del{display:none;right:26px;padding-right:4px;opacity:1}
+.opt_comm .write .tf_comm{padding-right:56px}
+.opt_comm .write .btn_del{display:block}
+.opt_open .box_tf .tf_comm{border-color:#1A1A1A}
+
+/* Select */
+.opt_comm .link_selected{display:block;overflow:hidden;padding:6px 31px 6px 15px;border:1px solid #E5E5E5;border-radius:4px;font-size:13px;line-height:20px;color:#4C4C4C;background:#FFF;text-align:left;white-space:nowrap;text-overflow:ellipsis;text-decoration:none;box-sizing:border-box}
+.opt_comm .link_selected:hover, .opt_comm .link_selected:focus, .opt_open .link_selected{border-color:#4C4C4C}
+.opt_comm .link_selected.disabled{border-color:#E5E5E5;color:#B3B3B3;background-color:#FAFAFA;cursor:not-allowed}
+.opt_comm .link_selected.error{border-color:#FF6666}
+.opt_comm .link_selected .ico_arr_d{position:absolute;top:9px;right:8px;opacity:0.6}
+.opt_comm .link_selected:hover .ico_arr_d, .opt_comm .link_selected:focus .ico_arr_d{opacity:1}
+.opt_comm .link_selected.disabled .ico_arr_d{opacity:0.2}
+.opt_open .link_selected{border-color:#4C4C4C}
+.opt_open .link_selected .ico_arr_d{-webkit-transform:rotate(180deg);-moz-transform:rotate(180deg);transform:rotate(180deg);opacity:1}
+
+/* 옵션박스 - search, select 공통 */
+.box_opt{display:none;overflow:hidden;position:absolute;top:38px;left:0;right:0;z-index:10;border:1px solid #1A1A1A;border-radius:4px;background:#FFF;text-align:left}
+.type_auto .box_opt{right:auto;min-width:100%;box-sizing:border-box}
+.box_opt .list_opt{overflow:auto;max-height:320px;padding:8px 0;border-radius:4px;box-sizing:border-box}
+.box_opt .list_opt .link_opt{display:block;overflow:hidden;padding:7px 15px;font-size:13px;line-height:20px;color:#999;text-decoration:none;white-space:nowrap;text-overflow:ellipsis}
+.box_opt .list_opt .txt_add{display:block;overflow:hidden;font-size:12px;line-height:18px;color:#CCC;white-space:nowrap;text-overflow:ellipsis}
+.box_opt .list_opt .link_opt:hover, .box_opt .list_opt .link_opt:focus{color:#4C4C4C;background-color:#F2F6FF}
+.box_opt .list_opt .on .link_opt{color:#3377FF;background-color:#F2F6FF}
+.box_opt .list_opt .link_opt:hover .txt_add, .box_opt .list_opt .link_opt:focus .txt_add{color:#B3B3B3}
+.box_opt .list_opt .on .link_opt:hover .txt_add, .box_opt .list_opt .on .link_opt:focus .txt_add, .box_opt .list_opt .on .txt_add{color:#B2CCFF}
+.box_opt .list_opt .txt_opt{position:relative;box-sizing:border-box}
+.box_opt .list_opt .ico_check_b{display:none;position:absolute;top:50%;right:0;margin-top:-8px}
+.box_opt .list_opt .on .ico_check_b{display:block}
+.box_opt .list_opt .txt_empty{display:block;padding:17px 16px;font-size:13px;line-height:20px;color:#999;text-align:center}
+.opt_open .box_opt{display:block}

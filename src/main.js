@@ -6,7 +6,11 @@
 // new Vue({
 //   render: h => h(App),
 // }).$mount('#app')
- 
+
+// 폴리필
+import 'core-js/stable';
+import 'regenerator-runtime/runtime'; 
+
 import DkSelect from './components/DkSelect.vue'
 // import './assets/css/common.css';
 
