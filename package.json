@@ -6,6 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
+    "deploy": "npm run lib && git add dist/ && git commit -m'Deploy lib' && git push origin master",
     "lib": "vue-cli-service build --target wc --name test-component 'src/main.js'"
   },
   "dependencies": {
